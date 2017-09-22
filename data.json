@@ -2,7 +2,7 @@
 	"data": [
 		{
 			"value": "T1",
-			"temp": 55
+			"temp": 50
 		},
 		{
 			"value": "T2",
@@ -22,7 +22,7 @@
 		},
 		{
 			"value": "T6",
-			"temp": 90
+			"temp": 85
 		}
 	]
 }
