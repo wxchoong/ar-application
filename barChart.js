@@ -13,7 +13,7 @@ var xhttp = new XMLHttpRequest();
 			
 			var title = document.createElement('a-text');
 					title.setAttribute('value', "Temperature");
-					title.setAttribute('color', 'white');
+					title.setAttribute('color', 'hotpink');
 					title.setAttribute('position', {x:-0.65, y:0.05, z:0});
 					title.setAttribute('rotation', '-90 90 0');
 					title.setAttribute('scale', '0.5 0.5 0.5');
