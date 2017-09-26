@@ -65,15 +65,15 @@ var xhttp = new XMLHttpRequest();
 						value.setAttribute('rotation', '-90 0 0');
 						value.setAttribute('scale', '0.3 0.3 0.3');
 						scene.appendChild(value);						
-				}
-				
-				var legend = document.createElement('a-text');
-					legend.setAttribute('value', data[n].value);
-					legend.setAttribute('color', 'red');
-					legend.setAttribute('position', {x:x-0.05, y:0.1, z:0.05});
-					legend.setAttribute('rotation', '-90 0 0');
-					legend.setAttribute('scale', '0.3 0.3 0.3');
-					scene.appendChild(legend);
+					}
+					
+					var legend = document.createElement('a-text');
+						legend.setAttribute('value', data[n].value);
+						legend.setAttribute('color', 'red');
+						legend.setAttribute('position', {x:x-0.05, y:0.1, z:0.05});
+						legend.setAttribute('rotation', '-90 0 0');
+						legend.setAttribute('scale', '0.3 0.3 0.3');
+						scene.appendChild(legend);
 				
 					x += 0.15;
 
