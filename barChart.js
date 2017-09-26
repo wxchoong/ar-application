@@ -13,7 +13,7 @@ var xhttp = new XMLHttpRequest();
 			
 			var title = document.createElement('a-text');
 					title.setAttribute('value', "Temperature");
-					title.setAttribute('color', 'hotpink');
+					title.setAttribute('color', 'red');
 					title.setAttribute('position', {x:-0.65, y:0.05, z:0});
 					title.setAttribute('rotation', '-90 90 0');
 					title.setAttribute('scale', '0.5 0.5 0.5');
@@ -41,7 +41,7 @@ var xhttp = new XMLHttpRequest();
 				for (var i = 0; i < max+10; i += 10){ 
 					
 					var axis = document.createElement('a-box');
-						axis.setAttribute('color', 'hotpink');
+						axis.setAttribute('color', 'red');
 						axis.setAttribute('position', {x:-0.35, y:0.02, z:i*(-0.005)-0.05});
 						axis.setAttribute('width', '0.01');
 						axis.setAttribute('height', '0.01');
@@ -50,7 +50,7 @@ var xhttp = new XMLHttpRequest();
 					
 					if(i > 0){
 						var value_indicator = document.createElement('a-box');
-							value_indicator.setAttribute('color', 'hotpink');
+							value_indicator.setAttribute('color', 'red');
 							value_indicator.setAttribute('position', {x:-0.35, y:0.02, z: i*(-0.01)});
 							value_indicator.setAttribute('width', '0.05');
 							value_indicator.setAttribute('height', '0.01');
@@ -60,7 +60,7 @@ var xhttp = new XMLHttpRequest();
 					
 					var value = document.createElement('a-text');
 						value.setAttribute('value', i);
-						value.setAttribute('color', 'hotpink');
+						value.setAttribute('color', 'red');
 						value.setAttribute('position', {x:-0.55, y:0.02, z:i*(-0.01)});
 						value.setAttribute('rotation', '-90 0 0');
 						value.setAttribute('scale', '0.3 0.3 0.3');
@@ -69,7 +69,7 @@ var xhttp = new XMLHttpRequest();
 				
 				var legend = document.createElement('a-text');
 					legend.setAttribute('value', data[n].value);
-					legend.setAttribute('color', 'hotpink');
+					legend.setAttribute('color', 'red');
 					legend.setAttribute('position', {x:x-0.05, y:0.1, z:0.05});
 					legend.setAttribute('rotation', '-90 0 0');
 					legend.setAttribute('scale', '0.3 0.3 0.3');
