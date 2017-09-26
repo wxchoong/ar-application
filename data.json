@@ -2,23 +2,23 @@
 	"data": [
 		{
 			"value": "T1",
-			"temp": 50
+			"temp": 60
 		},
 		{
 			"value": "T2",
-			"temp": 35
-		},
-		{
-			"value": "T3",
 			"temp": 45
 		},
 		{
+			"value": "T3",
+			"temp": 30
+		},
+		{
 			"value": "T4",
-			"temp": 70
+			"temp": 55
 		},
 		{
 			"value": "T5",
-			"temp": 15
+			"temp": 70
 		},
 		{
 			"value": "T6",
