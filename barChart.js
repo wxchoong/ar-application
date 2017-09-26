@@ -41,7 +41,7 @@ var xhttp = new XMLHttpRequest();
 				for (var i = 0; i < max+10; i += 10){ 
 					
 					var axis = document.createElement('a-box');
-						axis.setAttribute('color', 'lightgreen');
+						axis.setAttribute('color', 'hotpink');
 						axis.setAttribute('position', {x:-0.35, y:0.02, z:i*(-0.005)-0.05});
 						axis.setAttribute('width', '0.01');
 						axis.setAttribute('height', '0.01');
@@ -50,7 +50,7 @@ var xhttp = new XMLHttpRequest();
 					
 					if(i > 0){
 						var value_indicator = document.createElement('a-box');
-							value_indicator.setAttribute('color', 'lightgreen');
+							value_indicator.setAttribute('color', 'hotpink');
 							value_indicator.setAttribute('position', {x:-0.35, y:0.02, z: i*(-0.01)});
 							value_indicator.setAttribute('width', '0.05');
 							value_indicator.setAttribute('height', '0.01');
@@ -60,7 +60,7 @@ var xhttp = new XMLHttpRequest();
 					
 					var value = document.createElement('a-text');
 						value.setAttribute('value', i);
-						value.setAttribute('color', 'lightgreen');
+						value.setAttribute('color', 'hotpink');
 						value.setAttribute('position', {x:-0.55, y:0.02, z:i*(-0.01)});
 						value.setAttribute('rotation', '-90 0 0');
 						value.setAttribute('scale', '0.3 0.3 0.3');
@@ -69,7 +69,7 @@ var xhttp = new XMLHttpRequest();
 				
 				var legend = document.createElement('a-text');
 					legend.setAttribute('value', data[n].value);
-					legend.setAttribute('color', 'lightgreen');
+					legend.setAttribute('color', 'hotpink');
 					legend.setAttribute('position', {x:x-0.05, y:0.1, z:0.05});
 					legend.setAttribute('rotation', '-90 0 0');
 					legend.setAttribute('scale', '0.3 0.3 0.3');
