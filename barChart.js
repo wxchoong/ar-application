@@ -6,7 +6,7 @@ var xhttp = new XMLHttpRequest();
 			var response = JSON.parse(xhttp.responseText);
 			var data = response.data;
 			
-			var color = ['hotpink', 'orange', 'yellow', 'green', 'blue', 'purple']
+			var color = ['deeppink', 'orangered', 'gold', 'yellowgreen', 'deepskyblue', 'darkorchid']
 			var x = -0.25;
 			
 			var scene = document.querySelector('a-scene');
