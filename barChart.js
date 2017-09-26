@@ -1,6 +1,11 @@
 var xhttp = new XMLHttpRequest();
 	xhttp.open("GET", "data.json", true);
-	xhttp.onload = function() {
+	xhttp.onload = processReqChange;
+	setTimeout(processReqChange, 1000);
+	xhttp.send();
+	
+	function processReqChange()
+	{
 		if (this.status == 200) {
 			
 			var response = JSON.parse(xhttp.responseText);
@@ -66,7 +71,7 @@ var xhttp = new XMLHttpRequest();
 						value.setAttribute('scale', '0.3 0.3 0.3');
 						scene.appendChild(value);						
 					}
-					
+				
 					var legend = document.createElement('a-text');
 						legend.setAttribute('value', data[n].value);
 						legend.setAttribute('color', 'red');
@@ -76,8 +81,9 @@ var xhttp = new XMLHttpRequest();
 						scene.appendChild(legend);
 				
 					x += 0.15;
-
-			}		
+				
+			}
 		}
-	};
-	xhttp.send();
+	}
+
+	
