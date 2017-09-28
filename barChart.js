@@ -1,5 +1,5 @@
 var xhttp = new XMLHttpRequest();
-	xhttp.open("GET", "https://github.com/wxchoong/wxchoong.github.io/blob/master/data.json", true);
+	xhttp.open("GET", "data.json", true);
 	xhttp.onload = function() {
 		if (this.status == 200) {
 			
