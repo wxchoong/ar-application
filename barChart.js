@@ -1,11 +1,6 @@
 var xhttp = new XMLHttpRequest();
 	xhttp.open("GET", "data.json", true);
-	xhttp.onload = processReqChange;
-	setTimeout(processReqChange, 1000);
-	xhttp.send();
-	
-	function processReqChange()
-	{
+	xhttp.onload = function() {
 		if (this.status == 200) {
 			
 			var response = JSON.parse(xhttp.responseText);
@@ -13,7 +8,8 @@ var xhttp = new XMLHttpRequest();
 			
 			var color = ['deeppink', 'orangered', 'gold', 'yellowgreen', 'deepskyblue', 'darkorchid']
 			var x = -0.25;
-			
+			var z = -0.8;
+				
 			var scene = document.querySelector('a-scene');
 			
 			var title = document.createElement('a-text');
@@ -23,6 +19,13 @@ var xhttp = new XMLHttpRequest();
 					title.setAttribute('rotation', '-90 90 0');
 					title.setAttribute('scale', '0.5 0.5 0.5');
 					scene.appendChild(title);
+			
+			var user_alert = document.createElement('a-circle');
+				user_alert.setAttribute('color', 'lawngreen');
+				user_alert.setAttribute('radius', '0.05');
+				user_alert.setAttribute('position', '-0.65 0.05 -0.8');
+				user_alert.setAttribute('rotation', '-90 0 0');
+				scene.appendChild(user_alert);
 				
 			for(var n = 0; n < data.length; n++){	 
 				
@@ -33,6 +36,10 @@ var xhttp = new XMLHttpRequest();
 				if (data[n].temp > max){
 				  max = data[n].temp;
 				 }
+				 
+				if (max > 100){
+					alarm.setAttribute('color', 'crimson');
+				}
 				
 				var chart = document.createElement('a-box');
 					chart.setAttribute('color', color[n]);
@@ -71,19 +78,34 @@ var xhttp = new XMLHttpRequest();
 						value.setAttribute('scale', '0.3 0.3 0.3');
 						scene.appendChild(value);						
 					}
-				
+					
+					var name = document.createElement('a-text');
+						name.setAttribute('value', data[n].name);
+						name.setAttribute('color', 'red');
+						name.setAttribute('position', {x:x-0.05, y:0.1, z:0.05});
+						name.setAttribute('rotation', '-90 0 0');
+						name.setAttribute('scale', '0.3 0.3 0.3');
+						scene.appendChild(name);
+						
 					var legend = document.createElement('a-text');
-						legend.setAttribute('value', data[n].value);
+						legend.setAttribute('value', data[n].name + ': ' + data[n].legend);
 						legend.setAttribute('color', 'red');
-						legend.setAttribute('position', {x:x-0.05, y:0.1, z:0.05});
+						legend.setAttribute('position', {x:0.8, y:0.1, z:z});
 						legend.setAttribute('rotation', '-90 0 0');
-						legend.setAttribute('scale', '0.3 0.3 0.3');
+						legend.setAttribute('scale', '0.2 0.2 0.2');
 						scene.appendChild(legend);
+					
+					var legend_color = document.createElement('a-box');
+						legend_color.setAttribute('color', color[n]);
+						legend_color.setAttribute('position', {x:0.76, y:0.1, z:z});
+						legend_color.setAttribute('scale', '0.04 0 0.04');
+						scene.appendChild(legend_color);
+						
 				
 					x += 0.15;
-				
-			}
-		}
-	}
+					z += 0.07;
 
-	
+			}		
+		}
+	};
+	xhttp.send();
