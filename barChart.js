@@ -50,32 +50,31 @@ var xhttp = new XMLHttpRequest();
 					chart.setAttribute('material', 'opacity: 0.8;');
 					scene.appendChild(chart);
 				
-				for (var i = 0; i < max+10; i += 10){ 
+				for (var i = 0; i < max+5; i += 5){ 
 					
 					var axis = document.createElement('a-box');
 						axis.setAttribute('color', 'red');
-						axis.setAttribute('position', {x:-0.35, y:0.02, z:i*(-0.005)-0.05});
+						axis.setAttribute('position', {x:-0.35, y:0.02, z:i*(-0.005)-0.025});
 						axis.setAttribute('width', '0.01');
 						axis.setAttribute('height', '0.01');
-						axis.setAttribute('depth', (i*(-0.01))-0.1);
+						axis.setAttribute('depth', (i*(-0.01))-0.05);
 						scene.appendChild(axis);
 					
 					if(i > 0){
 						var value_indicator = document.createElement('a-box');
 							value_indicator.setAttribute('color', 'red');
 							value_indicator.setAttribute('position', {x:-0.35, y:0.02, z: i*(-0.01)});
-							value_indicator.setAttribute('width', '0.05');
-							value_indicator.setAttribute('height', '0.01');
-							value_indicator.setAttribute('depth', '0.01');
+							value_indicator.setAttribute('scale', '0.05 0.01 0.01');
 							scene.appendChild(value_indicator);
 						}
 					
 					var value = document.createElement('a-text');
 						value.setAttribute('value', i);
 						value.setAttribute('color', 'red');
-						value.setAttribute('position', {x:-0.55, y:0.02, z:i*(-0.01)});
+						value.setAttribute('position', {x:-0.42, y:0.02, z:i*(-0.01)});
 						value.setAttribute('rotation', '-90 0 0');
-						value.setAttribute('scale', '0.3 0.3 0.3');
+						value.setAttribute('align', 'right');
+						value.setAttribute('scale', '0.2 0.2 0.2');
 						scene.appendChild(value);						
 					}
 					
